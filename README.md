@@ -8,7 +8,7 @@ git clone https://github.com/jcar87/beman.conan.git
 conan remote add beman ./beman.conan
 ```
 
-Note: Conan Center needs to be configured as a remote as well
+Note: Conan Center needs to be configured as a remote as well (for `gtest`)
 
 Build and run example project:
 

@@ -39,12 +39,9 @@ class BemanOptionalConan(ConanFile):
     def package(self):
         cmake = CMake(self)
         cmake.install()
-        rmdir(self, os.path.join(self.package_folder, "lib", "cmake"))
-        rmdir(self, os.path.join(self.package_folder, "bin"))
+        rmdir(self, os.path.join(self.package_folder, "lib", "cmake")) # (the project's generated cmake config is currently broken)
+        rmdir(self, os.path.join(self.package_folder, "bin")) # don't package the sample executables
         
     def package_info(self):
-        self.cpp_info.bindirs = []
-        self.cpp_info.libdirs = ["lib"]
-        self.cpp_info.includedirs = ["include"]
         self.cpp_info.set_property("cmake_file_name", "BemanOptional")
         self.cpp_info.set_property("cmake_target_name", "Beman::Optional::beman_optional")

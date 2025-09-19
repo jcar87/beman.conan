@@ -2,6 +2,8 @@ from conan import ConanFile
 from conan.tools.build import check_min_cppstd
 from conan.tools.cmake import CMake, cmake_layout
 from conan.tools.files import get
+import os
+
 
 class BemanExemplarConan(ConanFile):
     name = "beman.exemplar"
@@ -39,6 +41,7 @@ class BemanExemplarConan(ConanFile):
         
     def package_info(self):
         self.cpp_info.libs = ["beman.exemplar"]
-        self.cpp_info.bindirs = []
-        self.cpp_info.libdirs = ["lib"]
-        self.cpp_info.includedirs = ["include"]
+
+        # CMakeDeps: use the generated config files instead
+        self.cpp_info.set_property("cmake_find_mode", "none")
+        self.cpp_info.builddirs.append(os.path.join("lib", "cmake", "beman.exemplar"))
