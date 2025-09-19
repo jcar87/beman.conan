@@ -1,0 +1,9 @@
+[requires]
+beman.optional/[*]
+
+[layout]
+cmake_layout
+
+[generators]
+CMakeToolchain
+CMakeDeps
