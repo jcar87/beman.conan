@@ -1,0 +1,4 @@
+sources:
+  "2.2.1":
+    url: "https://github.com/bemanproject/exemplar/archive/refs/tags/2.2.1.tar.gz"
+    sha256: "f64cc15e202492145d037cace024747526e194254cbb97f91718066018864ae4"
